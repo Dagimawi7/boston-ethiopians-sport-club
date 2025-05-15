@@ -95,46 +95,48 @@
       margin-top: 10px;
     }
   }
-
-  /* club History */
   .about-history {
-  max-width: 800px;
-  margin: 50px auto 80px;
-  padding: 0 20px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
-  color: #1a1a1a;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.about-history h2 {
-  color: #004080;
-  font-size: 2.4rem;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.about-history h3 {
-  color: #0066cc;
-  font-size: 1.6rem;
-  font-weight: 600;
-  margin-bottom: 20px;
-  border-bottom: 2px solid #004080;
-  padding-bottom: 8px;
-  max-width: 200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.about-history p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 16px;
-  text-align: justify;
-  color: #333;
-}
+    max-width: 800px;
+    margin: 50px auto 80px;
+    padding: 30px 25px;
+    background: #ffffff; /* pure white */
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 64, 128, 0.1); /* subtle blue shadow */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1a1a1a;
+  }
+  
+  .about-history h2 {
+    color: #004080; /* deep blue */
+    font-size: 2.4rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .about-history h3 {
+    color: #0066cc; /* lighter blue */
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #004080;
+    padding-bottom: 8px;
+    max-width: 220px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .about-history p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 18px;
+    text-align: justify;
+    color: #333;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
 
 /*who we are*/
 .who-we-are {
@@ -188,4 +190,54 @@
     margin-bottom: 10px;
     line-height: 1.5;
   }
+
+  /* what we offer */
+  .what-we-offer {
+    max-width: 800px;
+    margin: 0 auto 80px;
+    padding: 30px 25px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 64, 128, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1a1a1a;
+  }
+  
+  .what-we-offer h2 {
+    color: #004080;
+    font-size: 2.4rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .what-we-offer p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #333;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .what-we-offer ul {
+    list-style-type: disc;
+    padding-left: 40px;
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: #444;
+  }
+  
+  .what-we-offer ul li {
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  
+  .what-we-offer ul li strong {
+    color: #0066cc;
+  }
+  
   

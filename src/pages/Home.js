@@ -129,6 +129,17 @@ const Home = () => {
             </ul>
         </section>
 
+        <section className="what-we-offer">
+            <h2>What We Offer</h2>
+            <p>We organize and host various activities.</p>
+
+            <ul>
+                <li><strong>Soccer Leagues:</strong> Regular games and big tournaments.</li>
+                <li><strong>Kids Soccer Programs:</strong> Camps and mentoring for young players.</li>
+            </ul>
+        </section>
+
+
 
     </div>
     
