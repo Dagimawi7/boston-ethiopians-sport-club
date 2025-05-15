@@ -157,21 +157,52 @@ const Home = () => {
 
                 {/* QR Codes container */}
                 <div className="qr-codes">
-                    <div className="qr-code">
-                    <img src="/zelle-qr.png" alt="Zelle QR Code" />
-                    <p>Zelle</p>
+                    <div className="qr-code tooltip">
+                        <img src="/zelle-qr.png" alt="Zelle QR Code" />
+                        <span className="tooltiptext">Scan to donate via Zelle</span>
+                        <p>Zelle</p>
                     </div>
-                    <div className="qr-code">
-                    <img src="/cashapp-qr.png" alt="CashApp QR Code" />
-                    <p>CashApp</p>
+
+                    <div className="qr-code tooltip">
+                        <img src="/cashapp-qr.png" alt="CashApp QR Code" />
+                        <span className="tooltiptext">Scan to donate via CashApp</span>
+                        <p>CashApp</p>
                     </div>
                 </div>
+
                 </li>
             </ul>
 
             <Link to="/membership" className="join-button">
                 Sign Up Now
             </Link>
+        </section>
+
+        <section className="sponsors-section">
+            <h2>Our Sponsors</h2>
+            <p className="sponsor-thankyou">Special thanks to our sponsors for supporting us!</p>
+
+            <div className="sponsor-grid">
+                <div className="sponsor-card">
+                <a href="https://www.habeshamalden.com" target="_blank" rel="noopener noreferrer">
+                    <img src="/images/sponsors/habesha.png" alt="HABESHA Restaurant" />
+                </a>
+                <h3>HABESHA Ethiopian Restaurant</h3>
+                <p>Located in Malden</p>
+                </div>
+
+                <div className="sponsor-card">
+                <a href="https://southendfoodemporium.com" target="_blank" rel="noopener noreferrer">
+                    <img src="/images/sponsors/southend.png" alt="South End Food Emporium" />
+                </a>
+                <h3>South End Food Emporium</h3>
+                </div>
+            </div>
+
+            <div className="become-sponsor">
+                <p>Interested in supporting the Boston Ethiopians Sport Club?</p>
+                <a href="/contact" className="sponsor-button">Become a Sponsor</a>
+            </div>
         </section>
 
 
