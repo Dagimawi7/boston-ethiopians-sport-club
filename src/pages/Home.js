@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import Slider from 'react-slick';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Link } from 'react-router-dom';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -138,6 +139,42 @@ const Home = () => {
                 <li><strong>Kids Soccer Programs:</strong> Camps and mentoring for young players.</li>
             </ul>
         </section>
+
+        <section className="join-us">
+            <h2>Join Us!</h2>
+            <p>
+                Whether you're an athlete, a volunteer, or a supporter, there's a place for you in the Boston Ethiopians Sport Club.
+            </p>
+
+            <h3>Ways to participate:</h3>
+            <ul>
+                <li>Play in games and tournaments.</li>
+                <li>Help out by volunteering.</li>
+                <li>
+                Donate to support the club's goals.
+                {/* Donation email */}
+                <div className="donation-email">Email: bostonethiopiansc@gmail.com</div>
+
+                {/* QR Codes container */}
+                <div className="qr-codes">
+                    <div className="qr-code">
+                    <img src="/zelle-qr.png" alt="Zelle QR Code" />
+                    <p>Zelle</p>
+                    </div>
+                    <div className="qr-code">
+                    <img src="/cashapp-qr.png" alt="CashApp QR Code" />
+                    <p>CashApp</p>
+                    </div>
+                </div>
+                </li>
+            </ul>
+
+            <Link to="/membership" className="join-button">
+                Sign Up Now
+            </Link>
+        </section>
+
+
 
 
 
