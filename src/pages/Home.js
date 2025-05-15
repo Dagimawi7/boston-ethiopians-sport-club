@@ -37,6 +37,7 @@ const Home = () => {
   };
 
   return (
+    // Class for club info 
     <div className="home-container">
       <h1 className="club-name">Boston Ethiopians Sport Club</h1>
       <p className="club-info">
@@ -99,7 +100,22 @@ const Home = () => {
           </div>
         ))}
       </section>
+      <section className="about-history">
+            <h2>All About Boston Ethiopians Soccer Club</h2>
+            <h3>Our History</h3>
+            <p>
+                The Boston Ethiopian Sports Club is a non-profit, tax-exempt organization founded in 1976 to promote amateur soccer and cultural events within the Ethiopian community in the Boston and surrounding area.
+            </p>
+            <p>
+                Its goals include providing positive role models for the youth, promoting goodwill between the Ethiopian communities in Boston and creating a bridge where people from Ethiopia and North America can interact in a mutually beneficial manner.
+            </p>
+            <p>
+                In addition to the sports event, the club also promotes cultural activities to provide opportunities for Americans to learn more about Ethiopia's culture and history.
+            </p>
+        </section>
+
     </div>
+    
   );
 };
 
