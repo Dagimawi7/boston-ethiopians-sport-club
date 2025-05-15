@@ -100,6 +100,7 @@ const Home = () => {
           </div>
         ))}
       </section>
+
       <section className="about-history">
             <h2>All About Boston Ethiopians Soccer Club</h2>
             <h3>Our History</h3>
@@ -113,6 +114,21 @@ const Home = () => {
                 In addition to the sports event, the club also promotes cultural activities to provide opportunities for Americans to learn more about Ethiopia's culture and history.
             </p>
         </section>
+
+        <section className="who-we-are">
+            <h2>Who We Are</h2>
+            <p>
+                The Boston Ethiopians Sport Club (BESC) is a community-centered nonprofit that organizes sporting events, recreational activities, and fitness programs for all ages. Our mission is to unite Ethiopians in Boston through the power of sports and to create a platform for community engagement and personal growth.
+            </p>
+
+            <h3>Our Goals:</h3>
+            <ul>
+                <li>Promote a healthy lifestyle.</li>
+                <li>Build a stronger Ethiopian community.</li>
+                <li>Get both youth and adults involved in sports.</li>
+            </ul>
+        </section>
+
 
     </div>
     
