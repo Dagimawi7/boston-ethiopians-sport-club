@@ -245,6 +245,10 @@
   .email-btn:hover {
     background-color: #00a0a0;
   }
+  .accordion-content {
+    overflow: hidden;
+  }
+  
   
   
 

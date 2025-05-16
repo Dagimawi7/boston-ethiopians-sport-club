@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import './Roster.css'; // Make sure this path is correct
+import { motion, AnimatePresence } from 'framer-motion';
+import './Roster.css';
 
 const rosterData = [
-  // =================== COACHING STAFF ===================
+  // === COACHING STAFF ===
   {
     id: 1,
     name: 'Coach Haile Gebrselassie',
@@ -24,8 +25,7 @@ const rosterData = [
     type: 'coach',
     image: '/images/coaches/solomon.jpg',
   },
-
-  // =================== PLAYERS ===================
+  // === PLAYERS ===
   {
     id: 4,
     name: 'Abel M.',
@@ -72,39 +72,58 @@ export default function Roster() {
       : rosterData.filter((member) => member.type === selectedType);
 
   return (
-    <div className="roster-container">
-      <h2 className="roster-title">Team Roster</h2>
+    <motion.div
+      className="roster-container"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
+    >
+      <motion.h2
+        className="roster-title"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.3 }}
+      >
+        Team Roster
+      </motion.h2>
 
       <div className="filter-buttons">
-        <button
-          className={selectedType === 'all' ? 'active' : ''}
-          onClick={() => setSelectedType('all')}
-        >
-          All
-        </button>
-        <button
-          className={selectedType === 'coach' ? 'active' : ''}
-          onClick={() => setSelectedType('coach')}
-        >
-          Coaches
-        </button>
-        <button
-          className={selectedType === 'player' ? 'active' : ''}
-          onClick={() => setSelectedType('player')}
-        >
-          Players
-        </button>
-      </div>
-
-      <div className="roster-grid">
-        {filteredRoster.map((member) => (
-          <div key={member.id} className="roster-card">
-            <img src={member.image} alt={member.name} className="roster-image" />
-            <h3>{member.name}</h3>
-            <p>{member.role}</p>
-          </div>
+        {['all', 'coach', 'player'].map((type) => (
+          <motion.button
+            key={type}
+            className={selectedType === type ? 'active' : ''}
+            onClick={() => setSelectedType(type)}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            {type === 'all' ? 'All' : type === 'coach' ? 'Coaches' : 'Players'}
+          </motion.button>
         ))}
       </div>
-    </div>
+
+      <motion.div
+        className="roster-grid"
+        layout
+        transition={{ layout: { duration: 0.5 } }}
+      >
+        <AnimatePresence>
+          {filteredRoster.map((member) => (
+            <motion.div
+              key={member.id}
+              className="roster-card"
+              initial={{ opacity: 0, scale: 0.85 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.85 }}
+              transition={{ duration: 0.4 }}
+              layout
+            >
+              <img src={member.image} alt={member.name} className="roster-image" />
+              <h3>{member.name}</h3>
+              <p>{member.role}</p>
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </motion.div>
+    </motion.div>
   );
 }

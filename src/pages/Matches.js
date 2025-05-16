@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion'; // 🆕 Framer Motion
 import './Matches.css';  // <-- updated path
 
 const AccordionSection = ({ title, children, image }) => {
@@ -10,12 +11,35 @@ const AccordionSection = ({ title, children, image }) => {
         <h2>{title}</h2>
         <span>{isOpen ? '−' : '+'}</span>
       </div>
-      {isOpen && (
-        <div className="accordion-content">
-          {image && <img src={image} alt={`${title} visual`} className="accordion-image" />}
-          {children}
-        </div>
-      )}
+
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.div
+            key="content"
+            initial="collapsed"
+            animate="open"
+            exit="collapsed"
+            variants={{
+              open: { opacity: 1, height: 'auto' },
+              collapsed: { opacity: 0, height: 0 }
+            }}
+            transition={{ duration: 0.4, ease: 'easeInOut' }}
+            className="accordion-content"
+          >
+            {image && (
+              <motion.img
+                src={image}
+                alt={`${title} visual`}
+                className="accordion-image"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+              />
+            )}
+            {children}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
@@ -85,49 +109,48 @@ export default function Tournaments() {
       </AccordionSection>
 
       <AccordionSection
-            title="Kids Section"
-            image="/images/kids-program.jpg"
-            >
-            <p>We run mentorship programs and soccer clinics for kids. Our summer youth camp helps develop both soccer and leadership skills.</p>
+        title="Kids Section"
+        image="/images/kids-program.jpg"
+      >
+        <p>We run mentorship programs and soccer clinics for kids. Our summer youth camp helps develop both soccer and leadership skills.</p>
 
-            <div className="soccer-for-kids">
-                <h3>SOCCER FOR KIDS</h3>
-                <p className="powered-by">Powered by</p>
-                <h4>BOSTON ETHIOPIAN<br />SPORT CLUB</h4>
+        <div className="soccer-for-kids">
+          <h3>SOCCER FOR KIDS</h3>
+          <p className="powered-by">Powered by</p>
+          <h4>BOSTON ETHIOPIAN<br />SPORT CLUB</h4>
 
-                <img 
-                src="/images/kids-poster.jpg" 
-                alt="Soccer for Kids Poster" 
-                className="kids-poster" 
-                />
+          <img 
+            src="/images/kids-poster.jpg" 
+            alt="Soccer for Kids Poster" 
+            className="kids-poster" 
+          />
 
-                <div className="kids-info">
-                <p><strong>AGES 5–17</strong></p>
-                <p>DANEHY PARK,<br />CAMBRIDGE</p>
-                <p><strong>START DATE</strong></p>
-                <p>JUNE 21, 2025</p>
-                <p>10:00 AM – 12:00 PM</p>
-                <p>Email us – <a href="mailto:bostonethiopiansc@gmail.com">bostonethiopiansc@gmail.com</a></p>
-                </div>
+          <div className="kids-info">
+            <p><strong>AGES 5–17</strong></p>
+            <p>DANEHY PARK,<br />CAMBRIDGE</p>
+            <p><strong>START DATE</strong></p>
+            <p>JUNE 21, 2025</p>
+            <p>10:00 AM – 12:00 PM</p>
+            <p>Email us – <a href="mailto:bostonethiopiansc@gmail.com">bostonethiopiansc@gmail.com</a></p>
+          </div>
 
-                <div className="download-forms">
-                <h4>Download Forms</h4>
-                <p>Download the required forms, fill them out, and submit them via email.</p>
-                <div className="form-buttons">
-                    <a href="/documents/waiver.pdf" download className="form-btn">
-                    📄 Download Waiver AND RELEASE OF LIABILITY AGREEMENT
-                    </a>
-                    <a href="/documents/player-contact-info.pdf" download className="form-btn">
-                    📄 Download PLAYER CONTACT INFORMATION FORM
-                    </a>
-                    <a href="mailto:bostonethiopiansc@gmail.com" className="form-btn email-btn">
-                    📧 Email Completed Forms
-                    </a>
-                </div>
-                </div>
+          <div className="download-forms">
+            <h4>Download Forms</h4>
+            <p>Download the required forms, fill them out, and submit them via email.</p>
+            <div className="form-buttons">
+              <a href="/documents/waiver.pdf" download className="form-btn">
+                📄 Download Waiver AND RELEASE OF LIABILITY AGREEMENT
+              </a>
+              <a href="/documents/player-contact-info.pdf" download className="form-btn">
+                📄 Download PLAYER CONTACT INFORMATION FORM
+              </a>
+              <a href="mailto:bostonethiopiansc@gmail.com" className="form-btn email-btn">
+                📧 Email Completed Forms
+              </a>
             </div>
-        </AccordionSection>
-
+          </div>
+        </div>
+      </AccordionSection>
     </div>
   );
 }

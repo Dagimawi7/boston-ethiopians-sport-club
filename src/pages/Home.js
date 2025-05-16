@@ -2,9 +2,10 @@
 import React, { useEffect } from 'react';
 import Slider from 'react-slick';
 import AOS from 'aos';
-import 'aos/dist/aos.css';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
+import 'aos/dist/aos.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './Home.css';
@@ -38,15 +39,37 @@ const Home = () => {
   };
 
   return (
-    // Class for club info 
-    <div className="home-container">
-      <h1 className="club-name">Boston Ethiopians Sport Club</h1>
-      <p className="club-info">
+    <motion.div
+      className="home-container"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
+      <motion.h1
+        className="club-name"
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.2 }}
+      >
+        Boston Ethiopians Sport Club
+      </motion.h1>
+
+      <motion.p
+        className="club-info"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.4 }}
+      >
         Uniting our community through sports and camaraderie<br />
         Welcome to the Boston Ethiopians Sport Club!
-      </p>
+      </motion.p>
 
-      <div className="slider-wrapper">
+      <motion.div
+        className="slider-wrapper"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.6 }}
+      >
         <Slider {...settings}>
           {images.map((imgSrc, idx) => (
             <div key={idx}>
@@ -54,10 +77,23 @@ const Home = () => {
             </div>
           ))}
         </Slider>
-      </div>
+      </motion.div>
 
-      <section className="game-schedule">
-        <h2 className="schedule-title">Boston Game Schedule - ESFNA 2025</h2>
+      {/* Game Schedule */}
+      <motion.section
+        className="game-schedule"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        transition={{ staggerChildren: 0.2 }}
+      >
+        <motion.h2
+          className="schedule-title"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
+          Boston Game Schedule - ESFNA 2025
+        </motion.h2>
 
         {[
           {
@@ -79,10 +115,14 @@ const Home = () => {
             field: 'Field 1',
           },
         ].map((match, i) => (
-          <div
+          <motion.div
             key={i}
             className="match-card interactive"
-            data-aos="fade-up"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 + i * 0.2 }}
             onClick={() => alert(`Match vs ${match.opponent}`)}
           >
             <div className="team">
@@ -98,119 +138,164 @@ const Home = () => {
               <p>{match.date}</p>
               <p>{match.field}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </section>
+      </motion.section>
 
-      <section className="about-history">
-            <h2>All About Boston Ethiopians Soccer Club</h2>
-            <h3>Our History</h3>
-            <p>
-                The Boston Ethiopian Sports Club is a non-profit, tax-exempt organization founded in 1976 to promote amateur soccer and cultural events within the Ethiopian community in the Boston and surrounding area.
-            </p>
-            <p>
-                Its goals include providing positive role models for the youth, promoting goodwill between the Ethiopian communities in Boston and creating a bridge where people from Ethiopia and North America can interact in a mutually beneficial manner.
-            </p>
-            <p>
-                In addition to the sports event, the club also promotes cultural activities to provide opportunities for Americans to learn more about Ethiopia's culture and history.
-            </p>
-        </section>
-
-        <section className="who-we-are">
-            <h2>Who We Are</h2>
-            <p>
-                The Boston Ethiopians Sport Club (BESC) is a community-centered nonprofit that organizes sporting events, recreational activities, and fitness programs for all ages. Our mission is to unite Ethiopians in Boston through the power of sports and to create a platform for community engagement and personal growth.
-            </p>
-
-            <h3>Our Goals:</h3>
+      {/* Content Sections */}
+      {[
+        {
+          className: 'about-history',
+          title: 'All About Boston Ethiopians Soccer Club',
+          subTitle: 'Our History',
+          content: [
+            'The Boston Ethiopian Sports Club is a non-profit, tax-exempt organization founded in 1976...',
+            'Its goals include providing positive role models for the youth...',
+            'In addition to the sports event, the club also promotes cultural activities...',
+          ],
+        },
+        {
+          className: 'who-we-are',
+          title: 'Who We Are',
+          content: [
+            'The Boston Ethiopians Sport Club (BESC) is a community-centered nonprofit...',
+            'Our Goals:',
+          ],
+          list: [
+            'Promote a healthy lifestyle.',
+            'Build a stronger Ethiopian community.',
+            'Get both youth and adults involved in sports.',
+          ],
+        },
+        {
+          className: 'what-we-offer',
+          title: 'What We Offer',
+          content: ['We organize and host various activities.'],
+          list: [
+            'Soccer Leagues: Regular games and big tournaments.',
+            'Kids Soccer Programs: Camps and mentoring for young players.',
+          ],
+        },
+      ].map((section, idx) => (
+        <motion.section
+          key={idx}
+          className={section.className}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: idx * 0.2 }}
+        >
+          <h2>{section.title}</h2>
+          {section.subTitle && <h3>{section.subTitle}</h3>}
+          {section.content.map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
+          {section.list && (
             <ul>
-                <li>Promote a healthy lifestyle.</li>
-                <li>Build a stronger Ethiopian community.</li>
-                <li>Get both youth and adults involved in sports.</li>
-            </ul>
-        </section>
-
-        <section className="what-we-offer">
-            <h2>What We Offer</h2>
-            <p>We organize and host various activities.</p>
-
-            <ul>
-                <li><strong>Soccer Leagues:</strong> Regular games and big tournaments.</li>
-                <li><strong>Kids Soccer Programs:</strong> Camps and mentoring for young players.</li>
-            </ul>
-        </section>
-
-        <section className="join-us">
-            <h2>Join Us!</h2>
-            <p>
-                Whether you're an athlete, a volunteer, or a supporter, there's a place for you in the Boston Ethiopians Sport Club.
-            </p>
-
-            <h3>Ways to participate:</h3>
-            <ul>
-                <li>Play in games and tournaments.</li>
-                <li>Help out by volunteering.</li>
-                <li>
-                Donate to support the club's goals.
-                {/* Donation email */}
-                <div className="donation-email">Email: bostonethiopiansc@gmail.com</div>
-
-                {/* QR Codes container */}
-                <div className="qr-codes">
-                    <div className="qr-code tooltip">
-                        <img src="/zelle-qr.png" alt="Zelle QR Code" />
-                        <span className="tooltiptext">Scan to donate via Zelle</span>
-                        <p>Zelle</p>
-                    </div>
-
-                    <div className="qr-code tooltip">
-                        <img src="/cashapp-qr.png" alt="CashApp QR Code" />
-                        <span className="tooltiptext">Scan to donate via CashApp</span>
-                        <p>CashApp</p>
-                    </div>
-                </div>
-
+              {section.list.map((item, i) => (
+                <li key={i}>
+                  <strong>{item.split(':')[0]}</strong>
+                  {item.includes(':') ? `: ${item.split(':')[1]}` : ''}
                 </li>
+              ))}
             </ul>
+          )}
+        </motion.section>
+      ))}
 
-            <Link to="/membership" className="join-button">
-                Sign Up Now
-            </Link>
-        </section>
-
-        <section className="sponsors-section">
-            <h2>Our Sponsors</h2>
-            <p className="sponsor-thankyou">Special thanks to our sponsors for supporting us!</p>
-
-            <div className="sponsor-grid">
-                <div className="sponsor-card">
-                <a href="https://www.habeshamalden.com" target="_blank" rel="noopener noreferrer">
-                    <img src="/images/sponsors/habesha.png" alt="HABESHA Restaurant" />
-                </a>
-                <h3>HABESHA Ethiopian Restaurant</h3>
-                <p>Located in Malden</p>
-                </div>
-
-                <div className="sponsor-card">
-                <a href="https://southendfoodemporium.com" target="_blank" rel="noopener noreferrer">
-                    <img src="/images/sponsors/southend.png" alt="South End Food Emporium" />
-                </a>
-                <h3>South End Food Emporium</h3>
-                </div>
+      {/* Join Us */}
+      <motion.section
+        className="join-us"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.2 }}
+      >
+        <h2>Join Us!</h2>
+        <p>
+          Whether you're an athlete, a volunteer, or a supporter, there's a place for you in the Boston Ethiopians Sport Club.
+        </p>
+        <h3>Ways to participate:</h3>
+        <ul>
+          <li>Play in games and tournaments.</li>
+          <li>Help out by volunteering.</li>
+          <li>
+            Donate to support the club's goals.
+            <div className="donation-email">Email: bostonethiopiansc@gmail.com</div>
+            <div className="qr-codes">
+              {[
+                { label: 'Zelle', src: '/zelle-qr.png' },
+                { label: 'CashApp', src: '/cashapp-qr.png' },
+              ].map(({ label, src }, i) => (
+                <motion.div
+                  className="qr-code tooltip"
+                  key={i}
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <img src={src} alt={`${label} QR Code`} />
+                  <span className="tooltiptext">Scan to donate via {label}</span>
+                  <p>{label}</p>
+                </motion.div>
+              ))}
             </div>
+          </li>
+        </ul>
+        <motion.div whileHover={{ scale: 1.05 }}>
+          <Link to="/membership" className="join-button">
+            Sign Up Now
+          </Link>
+        </motion.div>
+      </motion.section>
 
-            <div className="become-sponsor">
-                <p>Interested in supporting the Boston Ethiopians Sport Club?</p>
-                <a href="/contact" className="sponsor-button">Become a Sponsor</a>
-            </div>
-        </section>
+      {/* Sponsors */}
+      <motion.section
+        className="sponsors-section"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <h2>Our Sponsors</h2>
+        <p className="sponsor-thankyou">Special thanks to our sponsors for supporting us!</p>
 
+        <div className="sponsor-grid">
+          {[
+            {
+              name: 'HABESHA Ethiopian Restaurant',
+              link: 'https://www.habeshamalden.com',
+              img: '/images/sponsors/habesha.png',
+              location: 'Located in Malden',
+            },
+            {
+              name: 'South End Food Emporium',
+              link: 'https://southendfoodemporium.com',
+              img: '/images/sponsors/southend.png',
+              location: '',
+            },
+          ].map((sponsor, i) => (
+            <motion.div
+              key={i}
+              className="sponsor-card"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            >
+              <a href={sponsor.link} target="_blank" rel="noopener noreferrer">
+                <img src={sponsor.img} alt={sponsor.name} />
+              </a>
+              <h3>{sponsor.name}</h3>
+              {sponsor.location && <p>{sponsor.location}</p>}
+            </motion.div>
+          ))}
+        </div>
 
-
-
-
-    </div>
-    
+        <div className="become-sponsor">
+          <p>Interested in supporting the Boston Ethiopians Sport Club?</p>
+          <Link to="/contact" className="sponsor-button">
+            Become a Sponsor
+          </Link>
+        </div>
+      </motion.section>
+    </motion.div>
   );
 };
 
