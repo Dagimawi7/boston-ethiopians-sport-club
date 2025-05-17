@@ -170,23 +170,24 @@ const Home = () => {
           title: 'All About Boston Ethiopians Soccer Club',
           subTitle: 'Our History',
           content: [
-            'The Boston Ethiopian Sports Club is a non-profit, tax-exempt organization founded in 1976...',
-            'Its goals include providing positive role models for the youth...',
-            'In addition to the sports event, the club also promotes cultural activities...',
-          ],
+            'The Boston Ethiopian Sports Club is a non-profit, tax-exempt organization founded in 1976 to promote amateur soccer and cultural events within the Ethiopian community in the Boston and surrounding area.',
+            'Its goals include providing positive role models for the youth, promoting goodwill between the Ethiopian communities in Boston and creating a bridge where people from Ethiopia and North America can interact in a mutually beneficial manner.',
+            'In addition to the sports event, the club also promotes cultural activities to provide opportunities for Americans to learn more about Ethiopia\'s culture and history.',
+          ],          
         },
         {
           className: 'who-we-are',
           title: 'Who We Are',
           content: [
-            'The Boston Ethiopians Sport Club (BESC) is a community-centered nonprofit...',
+            'Who We Are',
+            'The Boston Ethiopians Sport Club (BESC) is a community-centered nonprofit that organizes sporting events, recreational activities, and fitness programs for all ages. Our mission is to unite Ethiopians in Boston through the power of sports and to create a platform for community engagement and personal growth.',
             'Our Goals:',
           ],
           list: [
             'Promote a healthy lifestyle.',
             'Build a stronger Ethiopian community.',
             'Get both youth and adults involved in sports.',
-          ],
+          ],          
         },
         {
           className: 'what-we-offer',
@@ -283,15 +284,15 @@ const Home = () => {
           {[
             {
               name: 'HABESHA Ethiopian Restaurant',
-              link: 'https://www.habeshamalden.com',
-              img: '/images/sponsors/habesha.png',
+              link: 'https://habeshama.com/',
+              img: '/sponsors/sponsor1.png',
               location: 'Located in Malden',
             },
             {
               name: 'South End Food Emporium',
-              link: 'https://southendfoodemporium.com',
-              img: '/images/sponsors/southend.png',
-              location: '',
+              link: 'https://thesouthendfoodemporium.com/',
+              img: '/sponsors/sponsor2.png',
+              location: 'Located in WEBSTUDIO BOSTON',
             },
           ].map((sponsor, i) => (
             <motion.div
