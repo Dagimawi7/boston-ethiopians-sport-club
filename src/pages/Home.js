@@ -4,11 +4,26 @@ import Slider from 'react-slick';
 import AOS from 'aos';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 import 'aos/dist/aos.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './Home.css';
+
+//  Custom Arrow Components
+const NextArrow = ({ onClick }) => (
+  <div className="slick-arrow next" onClick={onClick}>
+    <FaChevronRight />
+  </div>
+);
+
+const PrevArrow = ({ onClick }) => (
+  <div className="slick-arrow prev" onClick={onClick}>
+    <FaChevronLeft />
+  </div>
+);
+
 
 const Home = () => {
   useEffect(() => {
@@ -40,6 +55,8 @@ const Home = () => {
     autoplaySpeed: 3000,
     arrows: true,
     adaptiveHeight: true,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
   };
 
   return (
@@ -102,19 +119,19 @@ const Home = () => {
         {[
           {
             opponent: 'Houston',
-            logo: '/teamlogo/houston.webp',
+            logo: 'teamlogo/houston.webp',
             date: 'Sunday, June 29 • 3:00 PM',
             field: 'Field 2',
           },
           {
             opponent: 'Maryland',
-            logo: '/teamlogo/maryland.jpeg',
+            logo: 'teamlogo/maryland.jpeg',
             date: 'Tuesday, July 1 • 4:30 PM',
             field: 'Field 1',
           },
           {
             opponent: 'Saint Michael',
-            logo: '/teamlogo/saint.jpg',
+            logo: 'teamlogo/saint.jpg',
             date: 'Wednesday, July 2 • 6:00 PM',
             field: 'Field 1',
           },

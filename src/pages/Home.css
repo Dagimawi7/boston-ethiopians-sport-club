@@ -457,4 +457,42 @@
   .sponsor-button:hover {
     background-color: #0066cc;
   }
+
+  /*custome arrow*/
+  .slick-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .slick-arrow:hover {
+    background: rgba(255, 255, 255, 0.95);
+    transform: translateY(-50%) scale(1.1);
+  }
+  
+  .slick-arrow svg {
+    color: #000;
+    font-size: 20px;
+  }
+  
+  .slick-arrow.prev {
+    left: 15px;
+  }
+  
+  .slick-arrow.next {
+    right: 15px;
+  }
+/* hides arrows on mobile*/
+  @media (max-width: 768px) {
+    .slick-arrow {
+      display: none !important;
+    }
+  }
   
