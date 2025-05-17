@@ -1,4 +1,4 @@
-// src/pages/Home.js
+
 import React, { useEffect } from 'react';
 import Slider from 'react-slick';
 import AOS from 'aos';

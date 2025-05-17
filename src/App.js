@@ -7,7 +7,7 @@ import Home from './pages/Home';
 import Matches from './pages/Matches';
 import Roster from './pages/Roster';
 import Membership from './pages/Membership';
-import Contact from './pages/Contact.js ';
+import Contact from './pages/Contact';
 
 function App() {
   return (
