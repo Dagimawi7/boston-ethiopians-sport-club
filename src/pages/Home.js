@@ -23,10 +23,11 @@ const Home = () => {
     '/homeposters/image3.jpeg',
     '/homeposters/image4.jpeg',
     '/homeposters/image5.jpeg',
-    '/Matchpost/Junetournament.jpg',
-    '/Matchpost/kidsposter.jpeg',  
-    '/Matchpost/sendoff.jpeg',     
+    '/homeposters/Junetournament.jpg',
+    '/Matchpost/kidsposter.jpeg',
+    '/Matchpost/sendoff.jpeg',
   ];
+  
   
 
   const settings = {
