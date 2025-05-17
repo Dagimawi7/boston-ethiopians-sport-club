@@ -17,13 +17,15 @@ const Home = () => {
 
   const images = [
     '/homeposters/sgallery.jpg',
-    '/images/pic2.jpg',
-    '/images/pic3.jpg',
-    '/images/pic4.jpg',
-    '/images/pic5.jpg',
-    '/images/pic6.jpg',
-    '/images/pic7.jpg',
-    '/images/pic8.jpg',
+    '/homeposters/image0.jpeg',
+    '/homeposters/image1.jpeg',
+    '/homeposters/image2.jpeg',
+    '/homeposters/image3.jpeg',
+    '/homeposters/image4.jpeg',
+    '/homeposters/image5.jpeg',
+    '/Matchpost/Junetournament.jpg',
+    '/Matchpost/kidsposter.JPEG',
+    '/Matchpost/sendoff.JPEG',
   ];
 
   const settings = {
