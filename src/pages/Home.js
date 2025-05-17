@@ -102,19 +102,19 @@ const Home = () => {
         {[
           {
             opponent: 'Houston',
-            logo: '/images/houston.png',
+            logo: '/teamlogo/houston.webp',
             date: 'Sunday, June 29 • 3:00 PM',
             field: 'Field 2',
           },
           {
             opponent: 'Maryland',
-            logo: '/images/maryland.png',
+            logo: '/teamlogo/maryland.jpeg',
             date: 'Tuesday, July 1 • 4:30 PM',
             field: 'Field 1',
           },
           {
             opponent: 'Saint Michael',
-            logo: '/images/saint-michael.png',
+            logo: '/teamlogo/saint.jpg',
             date: 'Wednesday, July 2 • 6:00 PM',
             field: 'Field 1',
           },
