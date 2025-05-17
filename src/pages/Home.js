@@ -24,9 +24,10 @@ const Home = () => {
     '/homeposters/image4.jpeg',
     '/homeposters/image5.jpeg',
     '/Matchpost/Junetournament.jpg',
-    '/Matchpost/kidsposter.JPEG',
-    '/Matchpost/sendoff.JPEG',
+    '/Matchpost/kidsposter.jpeg',  
+    '/Matchpost/sendoff.jpeg',     
   ];
+  
 
   const settings = {
     dots: true,
