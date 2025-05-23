@@ -5,11 +5,14 @@ import AOS from 'aos';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import Footer from './Footer';
+import './Home.css'; 
+
 
 import 'aos/dist/aos.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import './Home.css';
+
 
 //  Custom Arrow Components
 const NextArrow = ({ onClick }) => (
@@ -84,7 +87,6 @@ const Home = () => {
         Uniting our community through sports and camaraderie<br />
         Welcome to the Boston Ethiopians Sport Club!
       </motion.p>
-
       <motion.div
         className="slider-wrapper"
         initial={{ opacity: 0 }}
@@ -204,7 +206,7 @@ const Home = () => {
           className={section.className}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          xviewport={{ once: true }}
           transition={{ duration: 0.8, delay: idx * 0.2 }}
         >
           <h2>{section.title}</h2>
@@ -308,7 +310,10 @@ const Home = () => {
           </Link>
         </div>
       </motion.section>
+      {/* Add Footer here */}
+      <Footer />
     </motion.div>
+    
   );
 };
 
