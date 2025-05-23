@@ -133,10 +133,10 @@ export default function Tournaments() {
             <h4>Download Forms</h4>
             <p>Download the required forms, fill them out, and submit them via email.</p>
             <div className="form-buttons">
-              <a href="/documents/waiver.pdf" download className="form-btn">
+              <a href="/Forms/Waiver AND RELEASE OF LIABILITY AGREEMENT FOR KIDS SOCCER 2024.docx" download className="form-btn">
                 📄 Download Waiver AND RELEASE OF LIABILITY AGREEMENT
               </a>
-              <a href="/documents/player-contact-info.pdf" download className="form-btn">
+              <a href="/Forms/BESC_Soccer_4_kids_Contact info form.docx" download className="form-btn">
                 📄 Download PLAYER CONTACT INFORMATION FORM
               </a>
               <a href="mailto:bostonethiopiansc@gmail.com" className="form-btn email-btn">
