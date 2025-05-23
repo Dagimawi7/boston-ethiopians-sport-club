@@ -35,11 +35,20 @@
   
   .accordion-content img.accordion-image {
     width: 100%;
+    height: auto;
     max-height: 400px;
+    object-fit: contain;
     border-radius: 12px;
     margin-bottom: 15px;
-    object-fit: cover;
+    display: block;
   }
+  @media (max-width: 600px) {
+  .accordion-content img.accordion-image {
+    max-height: 250px;
+  }
+}
+
+  
   
   .poster-grid {
     display: flex;
@@ -48,15 +57,17 @@
     margin-top: 15px;
   }
   
-/* Poster grid images */
-.poster-grid img {
-  flex: 1 1 300px;
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
+  .poster-grid img {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    margin: 0 auto 20px;
+    display: block;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  }
+  
   
   .btn-directions {
     background-color: #004080;
@@ -77,11 +88,13 @@
 .esfna-image {
   width: 100%;
   height: auto;
-  max-height: 400px;
-  object-fit: cover;
+  max-width: 100%;
+  object-fit: contain;
   border-radius: 12px;
+  display: block;
+  margin: 0 auto;
 }
-  
+
   ul {
     margin-top: 10px;
     padding-left: 20px;
@@ -101,19 +114,20 @@
   }
   
   /* Team-vs-Team images */
-.team-image img {
-  width: 140px;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
+  .team-image img {
+    width: 140px;
+    height: 140px;
+    object-fit: contain;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
   
   .team-image img:hover {
     transform: scale(1.05);
   }
+
   
   .vs-text {
     font-size: 2rem;
@@ -129,20 +143,33 @@
     margin: 15px 0 30px;
     flex-wrap: wrap;
   }
+  /*Team Groupings Images */
+  .team-groupings-images img {
+    flex: 1 1 140px;
+    max-width: 140px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
   
- /* Team groupings & schedule */
-.team-groupings-images img,
+
+/* Game Schedule: make images larger and more visible */
 .game-schedule-images img {
-  flex: 1 1 300px;
+  flex: 1 1 800px;
   max-width: 100%;
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
   cursor: pointer;
   transition: transform 0.3s ease;
 }
 
+
+/* Hover effect for both */
 .team-groupings-images img:hover,
 .game-schedule-images img:hover,
 .team-image img:hover {
@@ -261,18 +288,31 @@
   .accordion-content {
     overflow: hidden;
   }
-  
-/* Responsive tweak for mobile */
-@media (max-width: 600px) {
-  .poster-grid img,
-  .team-groupings-images img,
-  .game-schedule-images img,
-  .team-image img {
-    flex: 1 1 100%;
-    width: 100%;
+
+  /* events poster*/
+  .poster-image {
+    display: block;
+    max-width: 100%;
     height: auto;
+    object-fit: contain;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
-}
   
+  
+
+
+
+
+  
+
+
+
+
+
+
+
+
 
   

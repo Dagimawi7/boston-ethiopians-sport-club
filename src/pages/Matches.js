@@ -100,16 +100,12 @@ export default function Tournaments() {
 
       </AccordionSection>
 
-      <AccordionSection
-        title="Events"
-        image="/images/mini-tournament.jpg"
-      >
-        <p>Community events, cultural showcases, and social nights throughout the year. More info coming soon!</p>
+      <AccordionSection title="Events">
+       <img src="/Matchpost/sendoff.jpeg" alt="Event" className="poster-image" />
       </AccordionSection>
 
       <AccordionSection
         title="Kids Section"
-        image="/images/kids-program.jpg"
       >
         <p>We run mentorship programs and soccer clinics for kids. Our summer youth camp helps develop both soccer and leadership skills.</p>
 
@@ -119,7 +115,7 @@ export default function Tournaments() {
           <h4>BOSTON ETHIOPIAN<br />SPORT CLUB</h4>
 
           <img 
-            src="/images/kids-poster.jpg" 
+            src="/Matchpost/kidsposter.jpeg" 
             alt="Soccer for Kids Poster" 
             className="kids-poster" 
           />
