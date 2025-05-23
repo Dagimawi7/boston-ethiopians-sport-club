@@ -35,9 +35,9 @@
   
   .accordion-content img.accordion-image {
     width: 100%;
-    border-radius: 10px;
+    max-height: 400px;
+    border-radius: 12px;
     margin-bottom: 15px;
-    max-height: 300px;
     object-fit: cover;
   }
   
@@ -48,11 +48,15 @@
     margin-top: 15px;
   }
   
-  .poster-grid img {
-    width: 30%;
-    border-radius: 8px;
-    object-fit: cover;
-  }
+/* Poster grid images */
+.poster-grid img {
+  flex: 1 1 300px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
   
   .btn-directions {
     background-color: #004080;
@@ -69,12 +73,14 @@
     background-color: #0066cc;
   }
   
-  .esfna-image {
-    width: 100%;
-    max-height: 300px;
-    object-fit: cover;
-    margin: 20px 0;
-  }
+/* General ESFNA image */
+.esfna-image {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+}
   
   ul {
     margin-top: 10px;
@@ -94,15 +100,16 @@
     text-align: center;
   }
   
-  .team-image img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-    cursor: pointer;
-  }
+  /* Team-vs-Team images */
+.team-image img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
   
   .team-image img:hover {
     transform: scale(1.05);
@@ -114,7 +121,7 @@
     color: #004080;
   }
   
-  .team-groupings-images,
+.team-groupings-images,
   .game-schedule-images {
     display: flex;
     justify-content: center;
@@ -123,21 +130,24 @@
     flex-wrap: wrap;
   }
   
-  .team-groupings-images img,
-  .game-schedule-images img {
-    width: 200px;
-    height: 130px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
-    cursor: pointer;
-    transition: transform 0.3s ease;
-  }
-  
-  .team-groupings-images img:hover,
-  .game-schedule-images img:hover {
-    transform: scale(1.05);
-  }
+ /* Team groupings & schedule */
+.team-groupings-images img,
+.game-schedule-images img {
+  flex: 1 1 300px;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.team-groupings-images img:hover,
+.game-schedule-images img:hover,
+.team-image img:hover {
+  transform: scale(1.05);
+}
 
 /*kids*/
 .soccer-for-kids {
@@ -173,13 +183,16 @@
     margin-bottom: 15px;
   }
   
-  .kids-poster {
-    max-width: 300px;
-    width: 90%;
-    margin-bottom: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
+/* Kids section image */
+.kids-poster {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
   
   .kids-info p {
     font-size: 1.1rem;
@@ -249,7 +262,17 @@
     overflow: hidden;
   }
   
-  
+/* Responsive tweak for mobile */
+@media (max-width: 600px) {
+  .poster-grid img,
+  .team-groupings-images img,
+  .game-schedule-images img,
+  .team-image img {
+    flex: 1 1 100%;
+    width: 100%;
+    height: auto;
+  }
+}
   
 
   

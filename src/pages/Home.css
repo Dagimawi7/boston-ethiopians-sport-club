@@ -502,7 +502,7 @@
   }
   
   .join-us ul li {
-    margin-bottom: 10px; /* Reduce bottom spacing */
+    margin-bottom: 0px; /* Reduce bottom spacing */
     text-align: center;
   }
   
