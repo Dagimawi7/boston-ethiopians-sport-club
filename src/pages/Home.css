@@ -495,4 +495,15 @@
       display: none !important;
     }
   }
+
+  .membership-link {
+    margin-top: 30px;
+    margin-bottom: 0px ;
+  }
+  
+  .join-us ul li {
+    margin-bottom: 10px; /* Reduce bottom spacing */
+    text-align: center;
+  }
+  
   

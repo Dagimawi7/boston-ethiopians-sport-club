@@ -144,7 +144,7 @@ const Home = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 + i * 0.2 }}
-            onClick={() => alert(`Match vs ${match.opponent}`)}
+            onClick={() => {}}
           >
             <div className="team">
               <img src="/logo.png" alt="Boston Logo" />
@@ -227,49 +227,40 @@ const Home = () => {
 
       {/* Join Us */}
       <motion.section
-        className="join-us"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.2 }}
-      >
-        <h2>Join Us!</h2>
-        <p>
-          Whether you're an athlete, a volunteer, or a supporter, there's a place for you in the Boston Ethiopians Sport Club.
-        </p>
-        <h3>Ways to participate:</h3>
-        <ul>
-          <li>Play in games and tournaments.</li>
-          <li>Help out by volunteering.</li>
-          <li>
-            Donate to support the club's goals.
-            <div className="donation-email">Email: bostonethiopiansc@gmail.com</div>
-            <div className="qr-codes">
-              {[
-                { label: 'Zelle', src: '/zelle-qr.png' },
-                { label: 'CashApp', src: '/cashapp-qr.png' },
-              ].map(({ label, src }, i) => (
-                <motion.div
-                  className="qr-code tooltip"
-                  key={i}
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <img src={src} alt={`${label} QR Code`} />
-                  <span className="tooltiptext">Scan to donate via {label}</span>
-                  <p>{label}</p>
-                </motion.div>
-              ))}
-            </div>
-          </li>
-        </ul>
-        <motion.div whileHover={{ scale: 1.05 }}>
-          <Link to="/membership" className="join-button">
-            Sign Up Now
-          </Link>
-        </motion.div>
-      </motion.section>
+  className="join-us"
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  viewport={{ once: true }}
+  transition={{ delay: 0.2 }}
+>
+  <h2>Join Us!</h2>
+  <p>
+    Whether you're an athlete, a volunteer, or a supporter, there's a place for you in the Boston Ethiopians Sport Club.
+  </p>
 
-      {/* Sponsors */}
+  <h3>Ways to participate:</h3>
+  <ul>
+    <li>Play in games and tournaments.</li>
+    <li>Help out by volunteering.</li>
+    <li>
+      Join our membership and pay your dues here:
+      <div className="donation-email">Email: bostonethiopiansc@gmail.com</div>
+      <motion.div whileHover={{ scale: 1.05 }} className="membership-link">
+        <a
+          href="https://www.zeffy.com/en-US/ticketing/812cffd3-ac45-4dcb-9322-7ad5cc225093"
+          className="join-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Pay Membership
+        </a>
+      </motion.div>
+    </li>
+  </ul>
+</motion.section>
+
+
+    {/* Sponsors */}
       <motion.section
         className="sponsors-section"
         initial={{ opacity: 0, y: 20 }}
