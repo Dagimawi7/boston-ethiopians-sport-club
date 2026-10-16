@@ -14,7 +14,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 
-//  Custom Arrow Components
+//  Custom Arrow Components for next and previous buttons 
 const NextArrow = ({ onClick }) => (
   <div className="slick-arrow next" onClick={onClick}>
     <FaChevronRight />
@@ -27,13 +27,16 @@ const PrevArrow = ({ onClick }) => (
   </div>
 );
 
-
+// Main Home page
 const Home = () => {
   useEffect(() => {
     AOS.init({ duration: 800 });
   }, []);
 
   const images = [
+
+    'homeposters/50th-Celebration.JPG',
+    'homeposters/SummerBBQ.PNG',
     '/homeposters/sgallery.jpg',
     '/homeposters/image0.jpeg',
     '/homeposters/image1.jpeg',
@@ -55,7 +58,7 @@ const Home = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 4000,
     arrows: true,
     adaptiveHeight: true,
     nextArrow: <NextArrow />,

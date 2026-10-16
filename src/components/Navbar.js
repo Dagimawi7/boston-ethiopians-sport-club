@@ -34,7 +34,7 @@ function Navbar() {
         onClick={() => setMenuOpen(false)} // close menu when clicking a link
       >
         <Link to="/">Home</Link>
-        <Link to="/matches">Matches</Link>
+        <Link to="/matches">Matches/Events</Link>
         <Link to="/roster">Roster</Link>
         <Link to="/membership">Membership</Link>
         <Link to="/contact">Contact</Link>
