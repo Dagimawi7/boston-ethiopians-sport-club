@@ -1,0 +1,347 @@
+
+/* ========================================
+   GALLERY PAGE — ESFNA BLUE THEME
+   ======================================== */
+
+   .gallery-page {
+    width: 100%;
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 0 20px 40px;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1a1a1a;
+  }
+  
+  /* ========================================
+     GALLERY HEADER
+     ======================================== */
+  
+  .gallery-header {
+    max-width: 800px;
+    margin: 0 auto 35px;
+    padding: 30px 20px;
+    text-align: center;
+    background: #f9faff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 64, 128, 0.08);
+  }
+  
+  .gallery-eyebrow {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #0066cc;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  
+  .gallery-header h1 {
+    margin: 0 0 15px;
+    color: #004080;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  
+  .gallery-header p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #444;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+  
+  /* ========================================
+     RESPONSIVE GALLERY GRID
+     ======================================== */
+  
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    gap: 24px;
+    width: 100%;
+  }
+  
+  /* ========================================
+     GALLERY IMAGE CARDS
+     ======================================== */
+  
+  .gallery-card {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-width: 0;
+    padding: 0;
+    overflow: hidden;
+    border: none;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 64, 128, 0.12);
+    cursor: pointer;
+    text-align: left;
+    font: inherit;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+  
+  /* Preserve the original aspect ratio of every image */
+  .gallery-thumbnail {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    margin: 0;
+    border-radius: 12px;
+    background-color: #f9f9f9;
+  }
+  
+  /* ========================================
+     IMAGE CAPTION OVERLAY
+     ======================================== */
+  
+  .gallery-card-overlay {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 40px 18px 18px;
+    color: #fff;
+    background: linear-gradient(
+      to top,
+      rgba(0, 32, 64, 0.92),
+      rgba(0, 64, 128, 0.55) 60%,
+      transparent
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .gallery-card-category {
+    color: #d6e8ff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  
+  .gallery-card-title {
+    max-width: 85%;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+  
+  .gallery-view-icon {
+    position: absolute;
+    right: 18px;
+    bottom: 18px;
+    color: white;
+    font-size: 1.5rem;
+  }
+  
+  /* Hover effects */
+  @media (hover: hover) {
+    .gallery-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 64, 128, 0.2);
+    }
+  
+    .gallery-card:hover .gallery-card-overlay {
+      opacity: 1;
+    }
+  }
+  
+  /* Keyboard accessibility */
+  .gallery-card:focus-visible,
+  .gallery-close:focus-visible {
+    outline: 3px solid #0066cc;
+    outline-offset: 4px;
+  }
+  
+  /* ========================================
+     IMAGE LIGHTBOX
+     ======================================== */
+  
+  .gallery-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 24px 24px;
+    box-sizing: border-box;
+    background: rgba(0, 32, 64, 0.96);
+  }
+  
+  .gallery-lightbox-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+  }
+  
+  /* Show the full image without cropping or distortion */
+  .gallery-full-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    object-fit: contain;
+    object-position: center;
+  }
+  
+  .gallery-lightbox-caption {
+    flex: 0 0 auto;
+    max-width: 100%;
+    margin: 0;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+  }
+  
+  /* Close button */
+  .gallery-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+    color: #fff;
+    background: #004080;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .gallery-close:hover {
+    background-color: #0066cc;
+  }
+  
+  /* ========================================
+     TABLETS
+     ======================================== */
+  
+  @media (max-width: 900px) {
+    .gallery-page {
+      margin-top: 30px;
+    }
+  
+    .gallery-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+  
+    /* Keep captions visible on touch devices */
+    .gallery-card-overlay {
+      padding: 35px 14px 14px;
+      opacity: 1;
+    }
+  
+    .gallery-card-title {
+      font-size: 1rem;
+    }
+  }
+  
+  /* ========================================
+     MOBILE PHONES
+     ======================================== */
+  
+  @media (max-width: 520px) {
+    .gallery-page {
+      margin: 20px auto;
+      padding: 0 14px 30px;
+    }
+  
+    .gallery-header {
+      margin-bottom: 24px;
+      padding: 24px 14px;
+    }
+  
+    .gallery-header p {
+      font-size: 0.95rem;
+    }
+  
+    .gallery-grid {
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+  
+    .gallery-card {
+      border-radius: 10px;
+    }
+  
+    .gallery-thumbnail {
+      border-radius: 10px;
+    }
+  
+    .gallery-card-overlay {
+      padding: 40px 14px 14px;
+    }
+  
+    .gallery-lightbox {
+      padding: 60px 12px 20px;
+    }
+  
+    .gallery-close {
+      top: 10px;
+      right: 12px;
+    }
+  }
+  
+  /* ========================================
+     VERY SMALL PHONES
+     ======================================== */
+  
+  @media (max-width: 320px) {
+    .gallery-page {
+      padding-right: 8px;
+      padding-left: 8px;
+    }
+  
+    .gallery-header {
+      padding: 20px 10px;
+    }
+  
+    .gallery-grid {
+      gap: 12px;
+    }
+  }
+  
+  /* ========================================
+     REDUCED MOTION ACCESSIBILITY
+     ======================================== */
+  
+  @media (prefers-reduced-motion: reduce) {
+    .gallery-card,
+    .gallery-card-overlay,
+    .gallery-close {
+      transition: none;
+    }
+  }
+  

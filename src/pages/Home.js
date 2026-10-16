@@ -37,6 +37,9 @@ const Home = () => {
 
     'homeposters/50th-Celebration.JPG',
     'homeposters/SummerBBQ.PNG',
+    'homeposters/kidssoccer.PNG',
+    'homeposters/kidsclosing.PNG',
+    'homeposters/travelMinnesota.PNG',
     '/homeposters/sgallery.jpg',
     '/homeposters/image0.jpeg',
     '/homeposters/image1.jpeg',

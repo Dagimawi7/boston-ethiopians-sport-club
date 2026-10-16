@@ -8,6 +8,7 @@ import Matches from './pages/Matches';
 import Roster from './pages/Roster';
 import Membership from './pages/Membership';
 import Contact from './pages/Contact';
+import Gallery from './pages/Gallery';
 
 function App() {
   return (
@@ -18,7 +19,9 @@ function App() {
         <Route path="/matches" element={<Matches />} />
         <Route path="/roster" element={<Roster />} />
         <Route path="/membership" element={<Membership />} />
+        <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
+
       </Routes>
     </Router>
   );

@@ -37,6 +37,7 @@ function Navbar() {
         <Link to="/matches">Matches/Events</Link>
         <Link to="/roster">Roster</Link>
         <Link to="/membership">Membership</Link>
+        <Link to="/Gallery">Gallery</Link>
         <Link to="/contact">Contact</Link>
       </div>
     </nav>
