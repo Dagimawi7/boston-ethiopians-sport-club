@@ -6,39 +6,53 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+    setMenuOpen((previousState) => !previousState);
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
   };
 
   return (
-    <nav className="navbar" role="navigation" aria-label="Main Navigation">
+    <nav
+      className={`navbar ${menuOpen ? 'menu-open' : ''}`}
+      role="navigation"
+      aria-label="Main Navigation"
+    >
+      {/* Logo stays at the top-left */}
       <div className="logo-section">
-        <Link to="/" aria-label="Home">
-          <img src="/logo.png" alt="Team Logo" className="logo" />
+        <Link to="/" aria-label="Home" onClick={closeMenu}>
+          <img
+            src="/logo.png"
+            alt="Team Logo"
+            className="logo"
+          />
         </Link>
       </div>
 
-      {/* Hamburger button for mobile */}
+      {/* Hamburger becomes an X when the menu is open */}
       <button
+        type="button"
         className={`menu-toggle ${menuOpen ? 'open' : ''}`}
         aria-controls="primary-navigation"
         aria-expanded={menuOpen}
         onClick={toggleMenu}
-        aria-label="Toggle menu"
+        aria-label={menuOpen ? 'Close menu' : 'Open menu'}
       >
-        <span className="hamburger"></span>
+        <span className="hamburger" />
       </button>
 
+      {/* Navigation links */}
       <div
         id="primary-navigation"
         className={`nav-links ${menuOpen ? 'active' : ''}`}
-        onClick={() => setMenuOpen(false)} // close menu when clicking a link
       >
-        <Link to="/">Home</Link>
-        <Link to="/matches">Matches/Events</Link>
-        <Link to="/roster">Roster</Link>
-        <Link to="/membership">Membership</Link>
-        <Link to="/Gallery">Gallery</Link>
-        <Link to="/contact">Contact</Link>
+        <Link to="/" onClick={closeMenu}>Home</Link>
+        <Link to="/matches" onClick={closeMenu}>Matches/Events</Link>
+        <Link to="/roster" onClick={closeMenu}>Roster</Link>
+        <Link to="/membership" onClick={closeMenu}>Membership</Link>
+        <Link to="/Gallery" onClick={closeMenu}>Gallery</Link>
+        <Link to="/contact" onClick={closeMenu}>Contact</Link>
       </div>
     </nav>
   );

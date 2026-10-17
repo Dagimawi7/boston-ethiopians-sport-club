@@ -30,10 +30,71 @@ const galleryImages = [
   },
 
   {
-    src: "GalleryPictures/IMG_1963.jpeg",
+    src: "GalleryPictures/IMG_1974.jpeg",
+    title: "Gallery Image 6",
+    category: "Other",
+  },
+  {
+    src: "GalleryPictures/IMG_8516.jpeg",
     title: "Gallery Image 7",
     category: "Other",
   },
+  {
+    src: "GalleryPictures/IMG_8543.jpeg",
+    title: "Gallery Image 8",
+    category: "Other",
+  },
+  {
+    src: "GalleryPictures/IMG_8570.jpeg",
+    title: "Gallery Image 9",
+    category: "Other",
+  },
+  {
+    src: "GalleryPictures/IMG_8583.jpeg",
+    title: "Gallery Image 10",
+    category: "Other",
+  },
+  {
+    src: "GalleryPictures/IMG_8600.jpeg",
+    title: "Gallery Image 11",
+    category: "Other",
+  },
+  {
+    src: "GalleryPictures/IMG_8606.jpeg",
+    title: "Gallery Image 12",
+    category: "Other",
+  },
+  {
+    src: "GalleryPictures/IMG_8626.jpeg",
+    title: "Gallery Image 13",
+    category: "Other",
+  },
+  {
+    src: "GalleryPictures/IMG_8760.jpeg",
+    title: "Gallery Image 14",
+    category: "Other",
+  },
+  {
+    src: "GalleryPictures/IMG_8828.jpeg",
+    title: "Gallery Image 15",
+    category: "Other",
+  },
+  {
+    src: "GalleryPictures/IMG_8843.jpeg",
+    title: "Gallery Image 16",
+    category: "Other",
+  },
+  {
+    src: "GalleryPictures/IMG_9973.jpeg",
+    title: "Gallery Image 17",
+    category: "Other",
+  },
+  {
+    src: "GalleryPictures/Screenshot_20260609_112357_Gallery(1).JPG",
+    title: "Gallery Image 18",
+    category: "Other",
+  },
+
   
 ];
 

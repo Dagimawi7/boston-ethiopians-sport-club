@@ -6,14 +6,14 @@ const rosterData = [
   // === COACHING STAFF ===
   {
     id: 1,
-    name: 'Coach Jordan',
+    name: 'To BE Determined soon ',
     role: 'Head Coach',
     type: 'coach',
     image: '/images/coaches/haile.jpg',
   },
   {
     id: 2,
-    name: 'Mickiy',
+    name: 'To be Determined soon ',
     role: 'Assistant Coach',
     type: 'coach',
     image: '/images/coaches/mekdes.jpg',
