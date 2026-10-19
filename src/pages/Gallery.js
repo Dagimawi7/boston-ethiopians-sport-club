@@ -4,94 +4,63 @@ import "./Gallery.css";
 
 const galleryImages = [
   {
-    src: "GalleryPictures/IMG_1916.jpeg",
-    title: "Gallery Image 1",
-    category: "Featured",
-  },
-  {
-    src: "GalleryPictures/IMG_1924.jpeg",
-    title: "Gallery Image 2",
-    category: "Featured",
-  },
-  {
-    src: "GalleryPictures/IMG_1928.jpeg",
-    title: "Gallery Image 3",
-    category: "Events",
-  },
-  {
     src: "GalleryPictures/IMG_1938.jpeg",
-    title: "Gallery Image 4",
+    title: "Gallery Image 1",
     category: "Events",
   },
   {
     src: "GalleryPictures/IMG_1949.jpeg",
-    title: "Gallery Image 5",
+    title: "Gallery Image 2",
     category: "Featured",
-  },
-
-  {
-    src: "GalleryPictures/IMG_1974.jpeg",
-    title: "Gallery Image 6",
-    category: "Other",
   },
   {
     src: "GalleryPictures/IMG_8516.jpeg",
-    title: "Gallery Image 7",
-    category: "Other",
-  },
-  {
-    src: "GalleryPictures/IMG_8543.jpeg",
-    title: "Gallery Image 8",
+    title: "Gallery Image 3",
     category: "Other",
   },
   {
     src: "GalleryPictures/IMG_8570.jpeg",
-    title: "Gallery Image 9",
+    title: "Gallery Image 4",
     category: "Other",
   },
   {
     src: "GalleryPictures/IMG_8583.jpeg",
-    title: "Gallery Image 10",
+    title: "Gallery Image 5",
     category: "Other",
   },
   {
     src: "GalleryPictures/IMG_8600.jpeg",
-    title: "Gallery Image 11",
+    title: "Gallery Image 6",
     category: "Other",
   },
   {
     src: "GalleryPictures/IMG_8606.jpeg",
-    title: "Gallery Image 12",
+    title: "Gallery Image 7",
     category: "Other",
   },
   {
     src: "GalleryPictures/IMG_8626.jpeg",
-    title: "Gallery Image 13",
+    title: "Gallery Image 8",
     category: "Other",
   },
   {
     src: "GalleryPictures/IMG_8760.jpeg",
-    title: "Gallery Image 14",
+    title: "Gallery Image 9",
     category: "Other",
   },
   {
     src: "GalleryPictures/IMG_8828.jpeg",
-    title: "Gallery Image 15",
+    title: "Gallery Image 10",
     category: "Other",
   },
   {
     src: "GalleryPictures/IMG_8843.jpeg",
-    title: "Gallery Image 16",
-    category: "Other",
-  },
-  {
-    src: "GalleryPictures/IMG_9973.jpeg",
-    title: "Gallery Image 17",
+    title: "Gallery Image 11", 
     category: "Other",
   },
   {
     src: "GalleryPictures/Screenshot_20260609_112357_Gallery(1).JPG",
-    title: "Gallery Image 18",
+    title: "Gallery Image 12",
     category: "Other",
   },
 
