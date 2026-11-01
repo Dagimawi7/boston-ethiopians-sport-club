@@ -17,4 +17,8 @@ body {
       align-items: center;
     }
   }
-  
+
+.site-wrapper {
+  position: relative;
+  min-height: 100vh;
+  }

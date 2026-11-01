@@ -13,16 +13,18 @@ import Gallery from './pages/Gallery';
 function App() {
   return (
     <Router>
-      <Navbar />  {/* Use Navbar component here */}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/matches" element={<Matches />} />
-        <Route path="/roster" element={<Roster />} />
-        <Route path="/membership" element={<Membership />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/contact" element={<Contact />} />
+      <div className="site-wrapper">
+        <Navbar />
 
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/matches" element={<Matches />} />
+          <Route path="/roster" element={<Roster />} />
+          <Route path="/membership" element={<Membership />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </div>
     </Router>
   );
 }

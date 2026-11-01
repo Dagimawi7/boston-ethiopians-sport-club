@@ -1,3 +1,67 @@
+/* points to the whole page */
+.home-page{
+  position: relative;
+  background: white;
+  overflow: hidden; /* if any content stretches beyond the screensize, it will be hidden */
+
+}
+
+/* shared setting for both decorations of the flag */
+.home-page::before, .home-page {
+  content: "";
+
+  /* lets move it precisely to the top left corner of the page */
+  position: absolute;
+  /* strectch from top to bottom and left to right */
+  top: 0; 
+  bottom: 0;
+
+  width: 90px;
+  /* controls what appears on top: appear */
+  z-index: 0;
+  /* prevents decor from blocking button clicks */
+  pointer-events: none;
+}
+
+/* left side decoration of the flag */
+.home-page::before{
+  /* decor starts from top left */
+  left: 0; 
+
+  /* mix colors from left to right */
+  background: linear-gradient(
+    to right,
+    #078A3A 0 32%,
+    #F7D116 32% 55%,
+    #D71920 55% 72%,
+    transparent 72%
+  );
+
+  /* Use a wide oval to cut my decoration, and place that oval at the left edge, halfway down */
+  clip-path: ellipse(100% 65% at 0% 50%);
+
+}
+
+/* Rigth Side of the decor */
+.home-page::after {
+  right: 0;
+
+  background: linear-gradient(
+    to left,
+    #078A3A 0 32%,
+    #F7D116 32% 55%,
+    #D71920 55% 72%,
+    transparent 72%
+  );
+
+  clip-path: ellipse(120% 80% at 100% 50%);
+}
+
+/* Keep website content above decorations */
+.home-container{
+  position: relative;
+  z-index: 1;
+}
 
 .home-container {
     max-width: 800px;

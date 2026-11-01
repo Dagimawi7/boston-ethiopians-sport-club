@@ -15,10 +15,10 @@
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    background-color: var(--color-green);
-    padding: 10px 25px;
-    box-shadow: 0 3px 8px rgba(46, 139, 87, 0.3);
-    border-radius: 0 0 12px 12px;
+    background-color: transparent;
+    padding: 15px 30px;
+    box-shadow: none;
+    border-radius: 0;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -66,7 +66,7 @@
   }
   
   /* ========================================
-     5. DESKTOP NAVIGATION LINKS
+     5. DESKTOP NAVIGATION Bar LINKS
      ======================================== */
   .nav-links {
     display: flex;
@@ -77,19 +77,19 @@
   
   .nav-links a {
     text-decoration: none;
-    color: var(--color-white);
+    color: #1a472a; 
     font-weight: 600;
-    font-size: 1.1rem;
-    padding: 8px 12px;
-    border-radius: 8px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 1.05rem;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: color 0.2s ease, transform 0.2s ease;
   }
   
   .nav-links a:hover,
   .nav-links a:focus {
-    color: var(--color-green);
-    background-color: var(--color-yellow);
-    font-weight: 700;
+    color:#078a3a;
+    background-color: transparent;
+    transform: translateY(-1px); /* make the text slightly move up when link is hovered over or clicked  */
     outline: none;
   }
   
@@ -124,7 +124,7 @@
     width: 30px;
     height: 3px;
     left: 15px;
-    background-color: var(--color-white);
+    background-color: #1a472a;
     border-radius: 3px;
     transition:
       transform 0.25s ease,
