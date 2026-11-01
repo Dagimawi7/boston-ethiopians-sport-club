@@ -7,7 +7,7 @@
 }
 
 /* shared setting for both decorations of the flag */
-.home-page::before, .home-page {
+.home-page::before , .home-page::after{
   content: "";
 
   /* lets move it precisely to the top left corner of the page */
@@ -64,7 +64,7 @@
 }
 
 .home-container {
-    max-width: 800px;
+    max-width: 1150px;
     margin: 0 auto;
     padding: 20px;
     text-align: center;
@@ -129,6 +129,7 @@
     border-radius: 4px;
   }
 }
+
 /* === community activites 3 cards === */ 
 .community-events {
   max-width: 1100px;
