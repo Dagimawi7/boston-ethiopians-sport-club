@@ -4,9 +4,12 @@ import Slider from 'react-slick';
 import AOS from 'aos';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import Footer from './Footer';
+import { FaChevronLeft, FaChevronRight, FaFutbol, FaUsers } from 'react-icons/fa';
+import { MdStadium } from 'react-icons/md';
+
 import './Home.css'; 
+
 
 
 import 'aos/dist/aos.css';
@@ -127,25 +130,37 @@ const Home = () => {
             friendship, and Ethiopian culture.
           </p>
 
+          
           <div className="events-grid">
             {[
               {
-                icon: "⚽",
-                title: "Kids Soccer",
+                icon: <FaFutbol />,
+                title: "BESC Kids Soccer Program",
                 description:
-                  "A place for young players to learn soccer, build skills, and enjoy the game together.",
-                details: "Schedule and registration details coming soon.",
+                  "Boston Ethiopians Sport Club's youth soccer program provides a fun, supportive environment where children can learn soccer, stay active, build confidence, and connect with other kids in the community.",
+                details:
+                  "Ages: Approximately 5–17 years old | Location: Danehy Park, Cambridge, MA | Season: June 20 – August 29, 2026 | Saturdays, 10:00 AM – 12:00 PM | Membership: $50 per child or $100 per family for multiple children. Registration and membership are required. No cash registration.",
                 className: "kids-soccer",
               },
               {
-                icon: "🏟️",
-                title: "Upcoming Indoor Soccer",
+                icon: <FaUsers />,
+                title: "ESFNA Tournament",
                 description:
-                  "Stay updated on our upcoming indoor soccer activities and opportunities to play.",
-                details: "Dates, location, and registration coming soon.",
+                  "Get ready for the annual Ethiopian Sports Federation in North America (ESFNA) Tournament, the largest gathering of Ethiopians in North America! This week-long event features men's Divsion I and II soccer tournaments,cultural performances, family-friendly activities, and an open-air concert showcasing top Ethiopian artists. It's a vibrant celebration of our culture, sportsmanship, and community spirit.",
+                details: "ESFNA is held annually in late June or early July in a different city each year. Always contact  esfna.org for specific dates and location information, and register well in advance due to high demand.",
+                className: "esfna-tournament",
+              },
+              {
+                icon: <MdStadium />,
+                title: "BESC Indoor Soccer Program",
+                description:
+                  "Stay active during the winter with BESC's indoor soccer program. Enjoy 16 weeks of indoor soccer and futsal-style training, games, and skill development.",
+                details:
+                  "Location: Cambridgeport School, 89 Elm St., Cambridge, MA | Season: Winter | Program length: 16 weeks | Cost: $100 per season | Planned schedule: Saturday mornings, 10:00 AM – 1:00 PM | BESC members and registered players receive priority.",
                 className: "indoor-soccer",
               },
             ].map((event, index) => (
+
               <motion.article
                 key={event.className}
                 className={`event-card ${event.className}`}
