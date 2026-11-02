@@ -1,0 +1,42 @@
+/* Container that spans the full screen */
+.side-ribbons-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Allows user to click buttons and links underneath */
+  z-index: 1200;
+  overflow: hidden;
+}
+
+.ribbon {
+  position: absolute;
+  top: -15px;
+  bottom: -15px;
+  height: calc(100% + 30px);
+  width: clamp(90px, 14vw, 210px); 
+}
+
+.ribbon-left {
+  left: 0;
+}   
+
+.ribbon-right {
+  right: 0;
+  transform: scaleX(-1);
+}
+
+.ribbon-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* On phones, make the ribbons thinner so they don't cover text */
+@media (max-width: 600px) {
+  .ribbon {
+    width: 38px;
+    opacity: 0.5;
+  }
+}

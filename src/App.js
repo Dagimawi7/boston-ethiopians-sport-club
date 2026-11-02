@@ -2,6 +2,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';  // Import Navbar component
+import SideRibbons from './components/SideRibbons';
 
 import Home from './pages/Home';
 import Matches from './pages/Matches';
@@ -14,6 +15,7 @@ function App() {
   return (
     <Router>
       <div className="site-wrapper">
+        <SideRibbons />
         <Navbar />
 
         <Routes>
