@@ -15,7 +15,7 @@
   top: -15px;
   bottom: -15px;
   height: calc(100% + 30px);
-  width: clamp(90px, 14vw, 210px); 
+  width: clamp(90px, 14vw, 210px);
 }
 
 .ribbon-left {
